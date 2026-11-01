@@ -145,7 +145,7 @@ fineguard/
 
 ### 1. Backend Server
 ```bash
-cd /Users/shahibarot/Desktop/fineguard/backend
+cd /Users/name/Desktop/fineguard/backend
 
 # Activate the virtual environment
 source ../venv/bin/activate
@@ -160,7 +160,7 @@ API Documentation will be live at: **`http://localhost:8000/docs`**
 
 ### 2. Frontend Development Server
 ```bash
-cd /Users/shahibarot/Desktop/fineguard/frontend
+cd /Users/name/Desktop/fineguard/frontend
 
 # Start Vite dev server on port 5173
 npm run dev
@@ -191,17 +191,3 @@ FineGuard is pre-configured with `render.yaml` and `Procfile`.
 * Or click **"Autofill Demo Credentials"** on the login screen, or create any new account.
 
 ---
-
-## 🎓 Viva & Defense Q&A Guide
-
-**Q1: Why did you choose Random Forests over Deep Neural Networks for this fintech project?**  
-*Answer:* Tabular financial datasets with heterogeneous feature types (e.g., categorical credit history combined with continuous income and ratios) are empirically proven to perform better on tree-based ensembles (Random Forest / XGBoost) than neural networks. Crucially, tree ensembles allow the computation of exact, deterministic Shapley values using TreeSHAP in polynomial time, unlike neural networks which require sampling approximations (KernelSHAP) that are slow and non-deterministic.
-
-**Q2: What is the significance of the Additive Attribution property in banking compliance?**  
-*Answer:* Under RBI Fair Lending Practices and the EU GDPR Article 22 ("Right to an Explanation"), lenders must provide clear adverse action notices when denying credit. Additive feature attribution guarantees that the sum of all individual feature impacts ($\sum \phi_i$) plus the population base rate ($\phi_0$) equals the model's exact prediction, providing mathematical proof of why an applicant was approved or rejected.
-
-**Q3: How do you prevent data leakage during feature engineering?**  
-*Answer:* All financial ratios (such as DTI and coverage-to-income) are derived strictly on an instance-level. Train-test splits (80/20) are performed in a stratified manner *before* any feature scaling. The `StandardScaler` is fitted solely on the training partition ($X_{\text{train}}$) and only applied (transformed) onto the test set ($X_{\text{test}}$), guaranteeing zero data leakage.
-
-**Q4: How does the What-If Simulator differ from the primary prediction form?**  
-*Answer:* The primary form computes the point prediction and SHAP explanation for a static applicant. The What-If Simulator runs two instances through the identical model pipeline in parallel to calculate the directional gradient $\Delta P = P(B) - P(A)$, revealing counterfactual paths to creditworthiness (e.g., determining whether reducing debt by ₹5,000 has a larger impact on risk than increasing tenure by 12 months).
