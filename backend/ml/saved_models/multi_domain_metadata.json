@@ -1,0 +1,14 @@
+{
+  "insurance": {
+    "accuracy": 0.9195,
+    "roc_auc": 0.981
+  },
+  "investment": {
+    "accuracy": 0.9505,
+    "roc_auc": 0.9899
+  },
+  "fraud": {
+    "accuracy": 0.9963,
+    "roc_auc": 0.9996
+  }
+}
